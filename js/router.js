@@ -1,7 +1,7 @@
 const route = (event) => {
     event = event || window.event;
     event.preventDefault();
-    // console.log(event.target.href)
+    console.log(event.target.href)
     window.history.pushState({}, "", event.target.href);
     handleLocation();
 };
@@ -25,5 +25,8 @@ const handleLocation = async () => {
 
 window.onpopstate = handleLocation;
 window.route = route;
+
+// window.addEventListener("hashchange", handleLocation);
+window.addEventListener("hashchange", ()=>console.log("hashchange"));
 
 handleLocation();
