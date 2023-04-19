@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=PT+Serif:wght@400;700&family=Roboto:wght@300;500;700;900&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/home.css">
+    <title>IQ Test App</title>
+</head>
+<body>
+    <header class="test__header result__header">
+        <button class="menu__btn" id="menu-btn">
+            <img src="../images/menu_icon.svg" alt="">
+        </button>
+        <img class="img" src="../images/brain-large_img-min.png" alt="brain">
+        <h3 class="result__header-title">Готово</h3>
+        <div class="menu">
+            <button class="menu__btn-close" id="close-btn">
+                <img src="../images/close_icon.svg" alt="close button">
+            </button>
+            <ul class="menu__list">
+                <li><a href="../index.html">Головна</a></li>
+                <li><a href="#about">Інформація про тест</a></li>
+                <li><a href="#">Пройти тест</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="result">
+        <p>Ваш результат розрахований: </p>
+        <p><span class="underline">Bи належите до 3%</span> респондентів,
+            чий рівень інтелекту більш ніж
+            на 15 пунктів відрізняється від
+            середнього в більший або менший бік!
+        </p>
+        <p>Швидше отримайте свій результат!</p>
+        <p>З метою захисту персональних даних результат тесту,
+             їхня детальна інтерпретація та рекомендації
+              доступні у вигляді голосового повідомлення
+             за дзвінком із вашого мобільного телефону
+        </p>
+        <p>Телефонуйте швидше, запис доступний всього 
+            <span id="timer">10:00</span> хвилин
+        </p>
+        <button class="call-btn">
+            <img src="../images/pnone-call.svg" alt="pnone-call icon">
+            <span class="call-btn__text">Зателефонувати і прослухати результат </span>
+        </button>
+        <p class="rules">УМОВИ ТА ПОЛОЖЕННЯ: ЦЕ РОЗВАЖАЛЬНА ПОСЛУГА.
+             КОРИСТУЮЧИСЬ НЕЮ, ВИ ПІДТВЕРДЖУЄТЕ,
+              ЩО ВАМ ВИПОВНИЛОСЯ 18 РОКІВ
+        </p>
+    </section>
+    <script src="../index.js"></script>
+</body>
+</html>

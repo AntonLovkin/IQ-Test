@@ -18,6 +18,7 @@ h2,
 h3,
 h4,
 p,
+span,
 button,
 ul,
 li {
@@ -61,6 +62,8 @@ body {
     position: relative;
     height: 46px;
 
+    padding: 15px;
+
     background-color: #181818;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -79,9 +82,16 @@ body {
     transform: translatex(320px);
     transition: transform ease 1s;
     overflow: hidden;
+    /* visibility: hidden; */
+    /* opacity: 0; */
+    display: none;
 }
 
 .visible{ 
+    /* opacity: 1; */
+    /* visibility: visible; */
+    /* overflow: visible; */
+    display: block;
     transform: translatex(0);
     z-index: 2;
 }
@@ -95,9 +105,12 @@ body {
 }
 
 .menu__btn{
-    position: absolute;
+    /* position: absolute;
     right: 15px;
-    top: 17px;
+    top: 17px; */
+    display: block;
+    margin-left: auto;
+    /* margin-top: 17px; */
 
     background: inherit;
 }
@@ -333,11 +346,11 @@ body {
     width: 100%;
     padding: 55px 10px 13px 10px;
     background-image: url('../images/lightning_PNG9-min.png'),
-    url('../images/lightning_PNG9-min.png'),
+    url('../images/lightning_2.png'),
     url('../images/background-min.png');
+    background-size: 165px, 165px, cover;
+    background-position: top right, bottom left, center;
     background-repeat: no-repeat;
-    /* background-position: center center; */
-    background-size: cover;
 }
 
 .invitation2 p:first-child{
@@ -394,3 +407,335 @@ body {
 
     color: rgba(255, 255, 255, 0.5);
 }
+
+
+/* --------------test.html--------------- */
+
+.test__header{
+    position: relative;
+    height: 46px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+
+    padding-left: 15px;
+
+    background-color: #181818;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.test__header .menu__btn{
+    margin: 0;
+}
+
+.test__header .img{
+    width: 48px;
+    height: 48px;
+
+    /* margin-left: 9px; */
+}
+
+.test__header .title{
+    font-family: 'Yeseva One';
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFC700;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 93vh;
+    padding-top: 17px;
+    padding-bottom: 25px;
+
+    background-image: url('../images/background-min.png');
+}
+
+.line{
+    width: 260px;
+    height: 11px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    background: #F2F3F3;
+    mix-blend-mode: normal;
+    opacity: 0.59;
+    border-radius: 10.5px;
+}
+
+.status{
+    width: 16px;
+    height: 11px;
+
+    background: #3BDE7C;
+    border-radius: 10.5px;
+}
+
+.question{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.question__title{
+    margin-bottom: 38px;
+
+    font-family: 'PT Serif';
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+}
+
+.question__list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;  
+}
+
+.question__item{
+    min-width: 320px;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+
+    /* padding: 15px 35px; */
+
+    background-color: rgb(242 243 243 / 15%);
+}
+
+ /* Hide the default radio button appearance */
+input[type="radio"] {
+    display: none;
+}
+  
+  /* Style the radio button appearance */
+input[type="radio"] + label:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 40px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    vertical-align: text-bottom;
+}
+  
+  /* Style the radio button appearance when checked */
+input[type="radio"]:checked + label:before {
+    background-color: #2950C2;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #FFC700;
+}
+
+.question__label{
+    width: 100%;
+    padding: 15px 35px;
+}
+
+/* .circle{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+} */
+
+.question__answer{
+    font-family: 'PT Serif';
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0.05em;
+
+    color: #fff;
+}
+
+.question__btn{
+    /* width: 200px;
+    height: 44px;
+
+    display: block;
+    margin-top: 33px;
+    margin-bottom: 52px; */
+
+    /* color: #fff;
+    background: inherit;
+    border: 1px solid white; */
+}
+
+/* --------------result page---------- */
+.result__header{
+    height: 46px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    padding-left: 15px;
+
+    background-color: #181818;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.result__header-title{
+    font-family: 'Yeseva One';
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: #FFC700;
+}
+
+.result{
+    padding: 35px 10px 5px 10px;
+    background-image: url('../images/background-min.png');
+    font-family: 'PT Serif';
+}
+
+.result p:nth-child(1){
+    /* font-family: 'PT Serif'; */
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 16px;
+
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+}
+
+.result p:nth-child(2){
+    margin-top: 13px;
+    padding: 0 15px;
+
+    /* font-family: 'PT Serif'; */
+    font-size: 14px;
+    line-height: 18px;
+
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.result p:nth-child(3) {
+    margin-top: 22px;
+    padding: 0 15px;
+    /* font-family: 'PT Serif'; */
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: #3BDE7C;
+}
+
+.result p:nth-child(4){
+    display: block;
+    padding: 15px;
+    margin-top: 15px;
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 14px;
+    /* or 175% */
+
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    background: #1C2741;
+    border-radius: 6px; 
+}
+
+.result p:nth-child(5){
+    margin-top: 15px;
+    /* font-family: 'PT Serif'; */
+    font-size: 11px;
+    line-height: 30px;
+
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    color: #3BDE7C;
+}
+
+.result p:nth-child(5) span{
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.call-btn{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 30px 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+
+    background: #EB1B00;
+    border-radius: 5px;
+}
+
+.call-btn__text{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+
+    text-align: left;
+
+    color: #FFFFFF;
+}
+
+.rules{
+    /* width: 110%; */
+    padding-top: 140px;
+
+    font-family: 'Roboto';
+    font-size: 7px;
+    line-height: 9px;
+
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    transform: translateY(23px);
+    background-image: inherit;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
