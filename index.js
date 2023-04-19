@@ -1,16 +1,20 @@
 // -----------menu------------
-const menuBtn = document.getElementById('menu-btn');
-const closeBtn = document.getElementById('close-btn');
-const sideBar = document.querySelector('.menu');
-console.log(sideBar)
+const onClick = (e) => {
+  console.log("e", e)
+  let menuBtn = document.getElementById('menu-btn');
+  let closeBtn = document.getElementById('close-btn');
+  let sideBar = document.querySelector('.menu');
+  // console.log(sideBar)
 
-menuBtn.addEventListener('click', () => {
+  menuBtn.addEventListener('click', () => {
+    
     sideBar.classList.toggle('visible')
-});
+  });
 
-closeBtn.addEventListener('click', () => {
+  closeBtn.addEventListener('click', () => {
     sideBar.classList.toggle('visible')
-});
+  });
+};
 
 
 // -------------timer------------
@@ -34,4 +38,4 @@ function updateTimer() {
   timer.innerHTML = (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
 
-const interval = setInterval(updateTimer, 1000);
+// const interval = setInterval(updateTimer, 1000);

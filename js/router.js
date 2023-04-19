@@ -1,62 +1,29 @@
-function Router(routes) {
-    try {
-        if (!routes) {
-            throw 'error: routes param is mandatories'
-        }
-        this.constructor(routes);
-    } catch (error) {
-        console.error(error)
-    }
+const route = (event) => {
+    event = event || window.event;
+    event.preventDefault();
+    // console.log(event.target.href)
+    window.history.pushState({}, "", event.target.href);
+    handleLocation();
 };
 
-Router.prototype = {
-    routes: undefined,
-    rootElem: undefined,
+const routes = {
+    "/": "/views/home.html",
+    "/result": "/views/result-page.html",
+    "/test": "/views/test.html",
+};
 
-    constructor: function (routes) {
-        this.routes = routes;
-        this.rootElem = rootElem;
-    },
-
-    init: function () {
-        var r = this.routes;
-        (function (scope, r) {
-            window.addEventListener('hashchange', function (evt) {
-                scope.hasChanged(scope, r);
-            });
-        })(this, r);
-        this.hasChanged(this, r);
-    },
-
-    hasChanged: function (scope, r) {
-        if (window.location.hash.length > 0) {
-            for (let i = 0; i < r.length; i++) {
-                let route = r[i];
-                if (route.isActiveRoute(window.location.hash.substr(1))) {
-                    scope.goToRoute(route.htmlName);
-                }                
-            }
-        } else {
-            for (let i = 0; i < r.length; i++) {
-                let route = r[i];
-                if (route.default) {
-                    scope.goToRoute(route.htmlName);
-                }                
-            }            
-        }
-    },
+const handleLocation = async () => {
+    const path = window.location.pathname;
+    const route = routes[path] || routes["/"];
     
-    goToRoute: function (htmlName) {
-        (function (scope) {
-            let url = 'views/' + htmlName;
-            xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState === 4 && this.status === 200) {
-                    scope.rootElem.innerHTML = this.responseText;
-                }
-            };
-            xhttp.open('GET', url, true);
-            xhttp.send();
-        })(this);      
-    }
-}
+    const html = await fetch(route).then((data) => data.text());
+    // console.log("path-", path)
+    // console.log("route-", route)
+    // console.log("html-", html)
+    document.getElementById("main-page").innerHTML = html;
+};
+
+window.onpopstate = handleLocation;
+window.route = route;
+
+handleLocation();

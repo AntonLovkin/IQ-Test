@@ -1,30 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=PT+Serif:wght@400;700&family=Roboto:wght@300;500;700;900&family=Yeseva+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/home.css">
-    <title>IQ Test App</title>
-</head>
-<body>
     <header class="test__header result__header">
-        <button class="menu__btn" id="menu-btn">
+        <button class="menu__btn" id="menu-btn" onclick="onClick()">
             <img src="../images/menu_icon.svg" alt="">
         </button>
         <img class="img" src="../images/brain-large_img-min.png" alt="brain">
         <h3 class="result__header-title">Готово</h3>
-        <div class="menu">
-            <button class="menu__btn-close" id="close-btn">
+        <div class="menu ">
+            <button class="menu__btn-close" id="close-btn" onclick="onClick()">
                 <img src="../images/close_icon.svg" alt="close button">
             </button>
             <ul class="menu__list">
-                <li><a href="../index.html">Головна</a></li>
-                <li><a href="#about">Інформація про тест</a></li>
-                <li><a href="#">Пройти тест</a></li>
+                <li><a href="/" onclick="route()">Головна</a></li>
+                <li><a href="/result" onclick="route()">Інформація про тест</a></li>
+                <li><a href="/test" onclick="route()">Пройти тест</a></li>
             </ul>
         </div>
     </header>
@@ -53,6 +40,4 @@
               ЩО ВАМ ВИПОВНИЛОСЯ 18 РОКІВ
         </p>
     </section>
-    <script src="../index.js"></script>
-</body>
-</html>
+    <script src="./js/timer.js"></script>
