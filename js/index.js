@@ -1,21 +1,36 @@
 // -----------menu------------
-// const onClick = (e) => {
-  // console.log("e", e)
 
-  // console.log(sideBar)
-// }
+// const parent = document.getElementById('main-page');
+// // console.log(parent)
+// parent.addEventListener('click', function (event) {
+  
+//   if (event.target && event.target.id === 'menu-btn') {
+ 
+//     let menuBtn = document.getElementById('menu-btn');
+//     let sideBar = document.querySelector('.menu');
+
+//     menuBtn.addEventListener('click', () => {
+//       sideBar.classList.toggle('visible')
+//     });
+//   }
+//     if (event.target && event.target.id === 'close-btn') {
+ 
+//     let closeBtn = document.getElementById('close-btn');
+//     let sideBar = document.querySelector('.menu');
+
+//     closeBtn.addEventListener('click', () => {
+//       sideBar.classList.toggle('visible')
+//     });
+//   }
+// });
+
 window.onload = function() {
   let menuBtn = document.getElementById('menu-btn');
   let closeBtn = document.getElementById('close-btn');
   let sideBar = document.querySelector('.menu');
 
-  // console.log(menuBtn);
-  // if (menuBtn) {
-  //   menuBtn.addEventListener('click', function () {
-  //     alert('Button clicked');
-  //   });
-  // }
-    menuBtn.addEventListener('click', () => {
+  menuBtn.addEventListener('click', () => {
+      // console.log('first')
       sideBar.classList.toggle('visible')
     });
 
