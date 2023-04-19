@@ -1,11 +1,11 @@
     <header class="test__header result__header">
-        <button class="menu__btn" id="menu-btn" onclick="onClick()">
+        <button class="menu__btn" id="menu-btn">
             <img src="../images/menu_icon.svg" alt="">
         </button>
         <img class="img" src="../images/brain-large_img-min.png" alt="brain">
         <h3 class="result__header-title">Готово</h3>
         <div class="menu ">
-            <button class="menu__btn-close" id="close-btn" onclick="onClick()">
+            <button class="menu__btn-close" id="close-btn">
                 <img src="../images/close_icon.svg" alt="close button">
             </button>
             <ul class="menu__list">
@@ -35,10 +35,35 @@
             <img src="../images/pnone-call.svg" alt="pnone-call icon">
             <span class="call-btn__text">Зателефонувати і прослухати результат </span>
         </button>
+        <div id="person"></div>
         <p class="rules">УМОВИ ТА ПОЛОЖЕННЯ: ЦЕ РОЗВАЖАЛЬНА ПОСЛУГА.
              КОРИСТУЮЧИСЬ НЕЮ, ВИ ПІДТВЕРДЖУЄТЕ,
               ЩО ВАМ ВИПОВНИЛОСЯ 18 РОКІВ
         </p>
     </section>
-    <div id="person"></div>
+    <script>
+        const timer = document.getElementById('timer');
+        console.log(timer)
+        let minutes = 10;
+        let seconds = 0;
+
+        function updateTimer() {
+        if (seconds === 0) {
+            if (minutes === 0) {
+            clearInterval(interval);
+            timer.innerHTML = "Time's up!";
+            return;
+            } else {
+            minutes--;
+            seconds = 59;
+            }
+        } else {
+            seconds--;
+        }
+        timer.innerHTML = (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        }
+
+        const interval = setInterval(updateTimer, 1000);
+    </script>
+    
    <!-- <script src="./js/timer.js"></script> -->

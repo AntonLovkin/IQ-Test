@@ -740,7 +740,15 @@ input[type="radio"]:checked + label {
     text-decoration: underline;
 }
 
+/* #person{
+    margin-left: auto;
+    margin-right: auto;
+} */
+
 .hero__card{
     display: block;
-    padding: 30px;
+    padding: 15px;
+    text-align: center;
+
+    color: #FFFFFF
 }
