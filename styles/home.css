@@ -62,6 +62,7 @@ body {
 .header{
     position: relative;
     height: 46px;
+    min-height: 4vh;
 
     padding: 15px;
 
@@ -148,6 +149,7 @@ body {
     /* width: 100vw;
     height: 100vh; */
     /* height: 522px; */
+    height: 96vh;
 
     display: flex;
     flex-direction: column;
@@ -156,6 +158,12 @@ body {
 
     padding: 27px 30px 0 30px;
     background-image: url('../images/background-min.png');
+}
+
+@media (min-width: 480px) {
+    .hero{
+        justify-content: space-around;
+    }
 }
 
 .hero__label{
@@ -284,12 +292,22 @@ body {
 }
 
 .description{
+    /* height: 100vh; */
     padding: 43px 30px 32px 25px;
     background-image: url('../images/shine_bg-min.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
+
+@media (min-width: 480px) {
+    .description{
+        min-height: 500px;
+        height: 100vh;
+        padding: 200px 100px;
+    }
+}
+
 
 .description img{
     width: 23px;
@@ -316,6 +334,8 @@ body {
 }
 
 .invitation {
+    height: 100vh;
+
     padding: 40px 11px;
     font-family: 'PT Serif';
     font-size: 16px;
@@ -324,6 +344,19 @@ body {
     letter-spacing: 0.05em;
 
     color: #272727;
+}
+
+@media (min-width: 480px) {
+    .invitation{
+        display: flex;
+        min-height: 500px;
+        /* height: 100vh; */
+        padding: 0 100px;
+        text-align: center;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
 }
 
 .invitation img{
@@ -345,13 +378,28 @@ body {
 
 .invitation2{
     width: 100%;
+    height: 100vh;
+
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+
     padding: 55px 10px 13px 10px;
+
     background-image: url('../images/lightning_PNG9-min.png'),
     url('../images/lightning_2.png'),
     url('../images/background-min.png');
     background-size: 165px, 165px, cover;
     background-position: top right, bottom left, center;
     background-repeat: no-repeat;
+}
+
+@media (min-width: 480px) {
+    .invitation2{
+        min-height: 500px;
+        padding: 100px 100px 25px 100px;
+    }
 }
 
 .invitation2 p:first-child{
@@ -611,6 +659,15 @@ input[type="radio"]:checked + label {
     background-image: url('../images/background-min.png');
     font-family: 'PT Serif';
 }
+
+@media (min-width: 480px) {
+    .result{
+        padding: 35px 100px 0px 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100vh;
+}}
 
 .result p:nth-child(1){
     /* font-family: 'PT Serif'; */
